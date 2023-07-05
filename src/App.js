@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from "./components/Card";
+import { product } from "./data/products";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        product.map(item=>( //burda ya () bele skobka qoyub ise saliriq yada return ederek
+<Card 
+key = {item.id}
+data= {item}
+// image={item.image} 
+// title={item.title} 
+// description={item.description}
+// price={item.price}
+/>
+        )
+        )}
+        {/* <Button className="secondary" text="Login"/>  */}
     </div>
   );
 }
